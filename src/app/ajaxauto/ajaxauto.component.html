@@ -1,0 +1,19 @@
+ <div class="input_search_skills">
+   <ul><li *ngFor="let items of selectarray">{{items}} <span (click)="remove(items)">X</span></li>
+    
+            <li><input id="country" placeholder="Enter your skills" type="text" class="validate filter-input" [(ngModel)]=query (keyup)=filter()>
+          <!-- <input type="text" name="" id="" placeholder="Enter your skills"> -->
+          <!-- <span><img src="./assets/images/search.png" alt=""></span> -->
+        </li>  
+        </ul>
+          <!-- <div class="experience_list">
+            <ul>
+              <li *ngFor="let skills of filterskils">{{skills}}</li>
+            </ul>
+          </div> -->
+            <div class="suggestions experience_list" *ngIf="filteredList.length > 0">
+                <ul>
+                    <li *ngFor="let item of filteredList" (click)="select(item)">{{item}}</li>
+                </ul>
+            </div>
+          </div>

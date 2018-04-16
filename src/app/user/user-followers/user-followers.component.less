@@ -1,0 +1,116 @@
+.content_margin
+{
+    margin: 15px;
+    margin-left: 255px;
+    background-color: #fafafa;
+    padding: 15px;
+}
+.followers_list
+{
+    .followers_block
+    {
+        display: inline-block;
+        border-radius: 50px;
+        padding-right: 34px;
+        border: 1px solid transparent;
+        transition: 0.3;
+        margin-bottom: 30px;
+        cursor: pointer;
+        &:hover
+        {
+            background-color: #fff;
+            border: 1px solid #dedede;
+        }
+        img
+        {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        span
+        {
+            margin-left: 6px;
+        }
+    }
+}
+.single_detail
+{
+    border-left: 1px solid #d8d8d8;
+    .single_bg_image
+    {
+        position: relative;
+        overflow: hidden;
+        .singl_bg
+        {
+            width: 320px;
+            height: 320px;
+            filter: blur(5px);
+        }
+        .profile_pic
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            text-align: center;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                -o-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+            img
+            {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border:3px solid #fff;
+            }
+            h3
+            {
+                color:#fff;
+                margin-bottom: 0;
+                font-size: 18px;
+            }
+            p
+            {
+                color:#fff;
+                font-size: 12px;
+            }
+        }
+        .profile_overlay
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+    .other_details
+    {
+        ul
+        {
+            padding-left: 15px;
+            margin-bottom: 0;
+            li
+            {
+                list-style-type: none;
+                h3
+                {
+                    font-size: 18px;
+                    margin-bottom: 0;
+                }
+                p
+                {
+                    margin-top: 4px;
+                    font-size: 14px;   
+                    a
+                    {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

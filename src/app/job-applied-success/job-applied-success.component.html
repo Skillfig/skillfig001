@@ -1,0 +1,60 @@
+<div class="employee_block">
+  <app-header></app-header>
+  <div style="padding-bottom:120px"></div>
+</div>
+<div class="large_gap"></div>
+<div class="container">
+<div class="col-md-12">
+  <div class="success_div">
+    <ul>
+      <li>
+        <div class="check_block">
+          <span class="closePopup">X</span>
+          <span class="check_mark"><i class="fas fa-check"></i></span>
+        </div>
+        <div class="content">
+          <h4>Done !</h4>
+          <p>You have successfully applied to this position</p>
+          <span>NetScore Technologies Pvt. Ltd. - Web Developer</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="clear"></div>
+<div class="large_gap"></div>
+<div class="releated_jobs">
+  <div class="col-md-6" *ngFor="let fe_list of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];let i = index;">
+    <div class="single_job_list">
+      <div class="col-md-3">
+        <img src="./assets/images/1.jpg" alt="">
+      </div>
+      <div class="col-md-9">
+        <h5 class="jb_title">HTML5 Developer (1-2 Yrs Exp.)</h5>
+        <p class="comp_name">Webstrot Technology Pvt.Ltd.</p>
+        <p>
+          <span class="sal_p_a"><i class="far fa-money-bill-alt"></i> $12K - 15K P.A </span>
+          <span class="jb_loca"><i class="fas fa-map-marker-alt"></i> Los Angeles, Califonia PO, 455001</span>
+        </p>
+      </div>
+      <div class="clear"></div>
+      <div class="col-md-12 text-center">
+        <div class="mini_gap"></div>
+          <div>
+            <button class="apply_btn" [class.applyBtn]="i == selectedindex" (click)="jobapplyBtn(i)" >APPLY</button>
+            <button class="none_btn applied_btn" [class.appliedbtn]="i == selectedindex"><i class="fas fa-check"></i> Applied</button>
+          </div>
+          <div class="mini_gap"></div>
+      </div>
+      <div class="clear"></div>
+      <div class="keywords">
+        <p>
+          <span><i class="fas fa-tags"></i></span>  
+          <span class="key_text">Keywords: </span>
+          <span class="key_all_text">UI Designer, Developer, Senior, IT Company, design, call center</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

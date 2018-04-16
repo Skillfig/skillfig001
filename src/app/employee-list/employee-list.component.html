@@ -1,0 +1,600 @@
+<div class="employee_block">
+
+<app-header></app-header>
+
+<div style="padding-bottom:120px"></div>
+</div>
+<!-- <div class="col-md-12 header">
+    <nav>
+        <div class="container">
+            <div class="col-md-6">
+                <div class="brand_logo">
+                    <a href=""><img src="assets/images/logo.svg" class="img-fluid"></a>
+                </div>
+                <div class="list">
+                    <ul>
+                        <li><a href="" class="active">FIND WORK</a></li>
+                        <li><a href="">MY JOBS</a></li>
+                        <li><a href="">REPORTS</a></li>
+                        <li><a href="">MESSAGES</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 header_form">
+                <div class="search_feild">
+                    <div class="add_on">
+                        <span class="glyphicon glyphicon-search"></span>
+                        <span class="glyphicon glyphicon-menu-down" (click)="headerdropdown()"></span>
+                    </div>
+                    <input type="text" [(ngModel)]="select_jobtype" placeholder="Find Jobs"> &nbsp;
+                    <span class="text-right"><i class="fas fa-question"></i></span>
+                </div>
+
+                <div class="dropdow" *ngIf="dropdowns">
+                    <ul>
+                        <li *ngFor="let jobs of alljob_list" (click)="get_jobtype(jobs)">{{jobs}}</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="col-md-3 pro_details">
+                <div class="pro_bell">
+                    <i class="far fa-bell"></i>
+                </div>
+                <div class="pro_img">
+                    <a href=""><img src="assets/images/girl.jpg"></a>
+                </div>
+                <p>uday teegulla &nbsp; <span class="glyphicon glyphicon-menu-down"></span></p>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="clear"></div> -->
+
+
+<div class="container mrgtop20">
+    <h1>Employee Search</h1>
+    <div class="col-md-12 pd0 con_details">
+        <div class="col-md-12 pd0 con_detail_head">
+            <div class="col-md-8 pd0">
+                 <div class="filter_inputs"*ngIf="filtershow_hide">
+                     <div class="col-md-6 pd0">
+                         <input  id="cities" type="text" class="validate"  [(ngModel)]=query123 (keyup)=filtercity()  placeholder="Location">
+                            <div class="suggestions filterdropdown" *ngIf="filterCityList.length > 0">
+                                <ul *ngFor="let item of filterCityList">
+                                    <li (click)="selectcity(item)">
+                                        {{item}}
+                                    </li>
+                                </ul>
+                            </div>
+                     </div>
+                    <div class="col-md-6 pd0 experience_input" (click)="experience_down()">
+                        <span class="expe_data">Experience : {{selectexp}} </span>
+                         <!--<input type="text" placeholder="Experience">-->
+                         <!--<span (click)="experience_down()" class="glyphicon glyphicon-menu-down exp_menudown"></span>-->
+                         <div class="exp_suggestions" *ngIf="exp_down">
+                             <ul>
+                                 <li *ngFor ="let exp_data of exp_list" (click)="get_exp_data(exp_data)">{{exp_data}}</li>
+                             </ul>
+                         </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="clear"></div>
+               
+            <div class="col-md-8 custom_iptag">
+                <div class="select_filter">
+                    <input id="country" type="text" class="validate filter-input" [(ngModel)]=query (keyup)=filter() placeholder="Search here">
+                    <span class="input-group-addon"><a class="glyphicon glyphicon-search"></a></span>
+                </div>
+                <div class="suggestions menudropdow" *ngIf="filteredList.length > 0">
+                    <ul *ngFor="let item of filteredList">
+                        <li (click)="select(item)">
+                            {{item}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 filter_search">
+                <span (click)="filter_input_feileds()"><i class="fas fa-sliders-h"></i> &nbsp; Filters</span>
+            </div>
+            <div class="col-md-2 text-right view_down">
+                <span>view</span>&nbsp;
+                <span class="view_details"><i class="fas fa-align-justify"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-angle-down clrg"></i></span>
+            </div>
+            <div class="clear"></div>
+            <div class="col-md-12 con_head_links">
+                <ul>
+                    <li class="dy_select" *ngFor="let items of selected">
+                        {{items}}<span (click)="remove(items)">x</span>
+                        </li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+
+
+        <div class="col-md-12 pd0 con_detail_list" *ngFor="let fe_list of feedbacklist |  paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="./assets/images/{{fe_list.pic}}.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>{{fe_list.name}}</p>
+                </div>
+                <div class="bold_head">
+                    <p>{{fe_list.desg}}</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>{{fe_list.hrearn}} <span>{{fe_list.phr}}</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>{{fe_list.totalearn}}<span>{{fe_list.trn}}</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">{{fe_list.jobsuccess}} </p>
+                        <!-- <p class="mr0">{{RISING TALENT}}</p> -->
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" [style.width]="fe_list.percent">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>{{fe_list.exp_details}}</p>
+                    <p>{{fe_list.suggested}}</p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;{{fe_list.location}}
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!-- <div class="col-md-12 pdtop20 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>AXAT Technologies Pvt. Ltd.</p>
+                </div>
+                <div class="bold_head">
+                    <p>PHP |HTML5 |CSS3|MobileApp|Magento|SEO</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$5.00 - $16.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$3000K + <span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">95% Job Success</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>Top 1% HTML5,CSS3Experts Top 5% PHP5,Web Design,Megento,Joomla & SEO Ex...</p>
+                    <div class="det_img1">
+                        <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+                    </div>
+                    <p class="con_adj_details">Relevent Agency Member.<br><span>Bhaskar K.PHP</span></p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;India
+                </p>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>Radik.o</p>
+                </div>
+                <div class="bold_head">
+                    <p>Wordpress Expert / Troubleshoot & Fix /Maintainance/Customization</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$25.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$10K + <span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">99% Job Success</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>Top rated Wordpress Expert Who provides High Quality Work On Time and On Budjet!... </p>
+                    <p>Suggested because they worked on 2 jobs that match your search.</p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Ireland
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>kanav k.</p>
+                </div>
+                <div class="bold_head">
+                    <p>Expertize in Bootstrap, MVC, Angularjs,Laravel,Ionic,React & APIs</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$25.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$20K+ <span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">97% Job Success</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 97%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>I worked on frontend and backend technologies ranging from designing to development... </p>
+                    <p>Suggested because they worked on 1 job that matches your search.</p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;India
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>Yonis L.</p>
+                </div>
+                <div class="bold_head">
+                    <p>Sr.Android and iOS Developer</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$60.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p><span></span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">100% Job Success</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>Experienced , highly motivated independent mobile developer with 12 years Software... </p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Sweden
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>Brian Roy V.</p>
+                </div>
+                <div class="bold_head">
+                    <p>Seniour Frontend Developer(Android and iOS)</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$30.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$40K + <span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">100% Job Success</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>***** Let my Work Speak for itself. ***** I am a seniour Frontend Developer(An...) </p>
+                    <p>Suggested because they worked on 2 jobs that match your search.</p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Philippines
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>Parvinder S.</p>
+                </div>
+                <div class="bold_head">
+                    <p>PHP Developer</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$10.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$5K +<span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>From the last 5 years , I have developed a wide range of websites using HTML,DHT... </p>
+                    <p>Suggested because they worked on 4 jobS that match your search.</p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;India
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>Paval K.</p>
+                </div>
+                <div class="bold_head">
+                    <p>PHP Developer</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$50.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$6K + <span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">RISING TALENT</p>
+                        
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>I know what I'm dong and as a result, my work is of the highest quality.I'm a...</p>
+                    <p>Suggested because they worked on 5 jobS that match your search.</p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Russia
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+
+
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>Volodymyr G.</p>
+                </div>
+                <div class="bold_head">
+                    <p>PHP Developer</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$7.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$1K + <span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">90% Job Success</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>I'm a middle PHP Developer with experience in building high quality sites. I a... </p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Ukraine
+                </p>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+
+
+        <div class="col-md-12 pd0 con_detail_list">
+            <div class="col-md-2 det_img pd0 ">
+                <a><img src="assets/images/girl.jpg" class=img-fluid></a>
+            </div>
+            <div class="col-md-7">
+                <div class="bold_head">
+                    <p>Alexey S.</p>
+                </div>
+                <div class="bold_head">
+                    <p>PHP Developer</p>
+                </div>
+                <div class="col-md-12 pd0 con_earning">
+                    <div class="col-md-4 pd0">
+                        <p>$25.00 <span>/ hr</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p>$60K + <span>earned</span></p>
+                    </div>
+                    <div class="col-md-4 pd0">
+                        <p class="mr0">100% Job Success</p>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_adj">
+                    <p>I am a web development expert with over 9 years experience in developing custom ...</p>
+                    <p>Suggested because they worked on 1 job that matches your search.</p>
+                </div>
+            </div>
+            <div class="col-md-3 con_location">
+                <p><span class="glyphicon glyphicon-map-marker"></span> &nbsp;Ukraine
+                </p>
+            </div>
+        </div> -->
+        <div class="clear"></div>
+        <div class="col-md-12 con_detail_list">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 text-right">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+<div class="col-md-12 footer">
+    <div class="container">
+        <div class="col-md-3 foo_links">
+            <ul>
+                <li>
+                    <a href="">About Us</a>
+                </li>
+                <li>
+                    <a href="">Blog</a>
+                </li>
+                <li>
+                    <a href="">Feedback</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3 foo_links">
+            <ul>
+                <li>
+                    <a href="">Community</a>
+                </li>
+                <li>
+                    <a href="">Trust & Safty</a>
+                </li>
+                <li>
+                    <a href="">Help & Support</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3 foo_links">
+            <ul>
+                <li>
+                    <a href="">Terms of Service</a>
+                </li>
+                <li>
+                    <a href="">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="">Desktop App</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-3 foo_links">
+            <ul>
+                <li>
+                    <a href="">Cookie Policy</a>
+                </li>
+                <li>
+                    <a href="">Enterproise Solutions</a>
+                </li>
+                <li>
+                    <a href="">Hiring Headquarters</a>
+                </li>
+                <li>
+                    <a href="">Mobile</a>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="col-md-12">
+            <button class="service_cod">Service Code</button>
+        </div>
+        <div class="clear"></div>
+        <div class="col-md-12 text-center social_links">
+            <ul>
+                <li>
+                    <a href=""><i class="fab fa-google-plus-g"></i></a>
+                </li>
+                <li>
+                    <a class="face_link" href=""><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

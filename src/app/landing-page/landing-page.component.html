@@ -1,0 +1,475 @@
+
+
+
+<div class="banner-1">
+
+    <app-header></app-header>
+
+
+    <div class="upLoad_CV_block" *ngIf="uploadCVBlock">
+      <span class="closePopup" (click)="closePopup()">X</span>
+      <h4>Upload your latest CV / Resume</h4>
+      <input #fileInput type="file" style="display:none" (change)="updateFile(fileInput)">
+      <button type="button" class="uploadfile_btn" (click)="fileInput.click()">Choose file</button>
+      {{filename}}
+      <div class="text-right">
+        <button class="submitfile" (click)="uploadCV()">Submit</button>
+      </div>
+    </div>
+  
+
+  <div class="container">
+    <div class="banner_content">
+      <h3>Find the job that fits you</h3>
+      <div class="all_search_fields">
+        <div class="col-md-6 p0">
+          <div class="input_search_skills">
+              <!--<ul class="main_skill_div">
+                 <li class="single_skil_list" *ngFor="let items of selectarray">{{items}} <span class="delete_skill_list" (click)="remove(items)">X</span></li> 
+    
+                <li>-->
+                  <input id="country" placeholder="Enter your skills" type="text" class="validate filter-input" [(ngModel)]=query (keyup)=filter()>
+              <!-- <input type="text" name="" id="" placeholder="Enter your skills"> -->
+              <span><img src="./assets/images/search.png" alt=""></span>
+            <!-- </li>  
+            </ul> -->
+          <!-- <div class="experience_list">
+            <ul>
+              <li *ngFor="let skills of filterskils">{{skills}}</li>
+            </ul>
+          </div> -->
+            <div class="suggestions experience_list" *ngIf="filteredList.length > 0">
+                <ul>
+                    <li *ngFor="let item of filteredList" (click)="select(item)">{{item}}</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 p0">
+          <div class="col-md-4 p0">
+            <div class="input_search_skills">
+              <input type="text" name="" id="city" placeholder="Location" class="validate filter-input" [(ngModel)]=query1 (keyup)=filter1()>
+              <span><img src="./assets/images/location.png" alt=""></span>
+              <div class="suggestions experience_list" *ngIf="filteredList1.length > 0">
+                <ul *ngFor="let item of filteredList1">
+                    <li (click)="select1(item)">{{item}}</li>
+                </ul>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-4 p0">
+            <div class="input_search_skills">
+              <div class="like_btn" (click)="show_exp_block()"><img src="./assets/images/experince.png" alt=""> Experince: {{exp_val}}</div>
+              <div class="experience_list" *ngIf="experince_list_block">
+                <ul>
+                 <li *ngFor="let experince of experinceList;" (click)="insert_val_to_top(experince)">{{experince}}</li>    
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 search_btn_blck pr0">
+            <button class="search_btn">Search</button>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <ul class="main_skill_div">
+          <li class="single_skil_list" *ngFor="let items of selectarray">{{items}} <span class="delete_skill_list" (click)="remove(items)">X</span></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <p class="text-right">
+        <span class="advanced_search"> Advanced Search</span>
+      </p>
+      <div class="col-md-6 text-center">
+        <button class="upload_cv_btn" (click)="uploadCVBtn()"><img src="./assets/images/Upload your CV1.png" alt=""> Upload your CV / Resume</button>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="./assets/images/areyouLookinh.png" alt=""> <span class="skilled_text">Are you Looking for Skilled? <a [routerLink]="" >Click here</a></span>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+
+<div class="block_2">
+  <div class="container">
+    <ul class="job_cate">
+      <li>
+        <div class="text-center">
+          <img src="" alt="">
+          <p>Software / IT</p>
+        </div>
+      </li>
+      <li>
+        <div class="text-center">
+          <img src="" alt="">
+          <p>Manufacturing</p>
+        </div>
+      </li>
+      <li>
+        <div class="text-center">
+          <img src="" alt="">
+          <p>Banking & Finance</p>
+        </div>
+      </li>
+      <li>
+        <div class="text-center">
+          <img src="" alt="">
+          <p>Operations  / BPO</p>
+        </div>
+      </li>
+      <li>
+        <div class="text-center">
+          <img src="" alt="">
+          <p>Sales & Marketing</p>
+        </div>
+      </li>
+      <li>
+        <div class="text-center">
+          <img src="" alt="">
+          <p>Government</p>
+        </div>
+      </li>
+      <li>
+        <div class="text-center">
+          <img src="" alt="">
+          <p>All Jobs</p>
+        </div>
+      </li>
+      <div class="clear"></div>
+    </ul>
+    <div class="large_gap"></div>
+
+    <h4>TOP HIRING COMPANIES</h4>
+<div class="companies_hiring">
+  <div class="text-right">
+    <span class="comp_put_left"><</span>  
+    <span class="comp_put_right">></span>  
+  </div>
+  <div id="owl-demo" class="owl-carousel owl-theme">
+    <span class='item'><img src="./assets/images/companies/1.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/2.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/3.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/4.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/1.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/2.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/3.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/4.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/1.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/2.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/3.jpg" alt=""></span>
+    <span class='item'><img src="./assets/images/companies/4.jpg" alt=""></span>
+  </div>
+  </div>
+  </div>
+</div>
+
+
+<div class="block3">
+  <div class="large_gap"></div>
+  <h4 class="text-center">HOW IT WORKS</h4>
+  <div class="little_gap"></div>
+  <div class="hiw_block">
+    <div class="col-md-6 div1 text-right pl0"> <p><span>  How we find you job</span></p></div>
+    <div class="col-md-6 div2 pr0"> <p><span> How we help you hire </span></p></div>
+    <div class="clear"></div>
+  </div>
+  <div class="large_gap"></div>
+  <div class="container main_sub">
+    <div class="col-md-3 text-center turnitblack">
+      <span>1</span>
+      <p>Search for jobs and apply</p>
+    </div>
+    <div class="col-md-3 text-center">
+      <span>2</span>
+      <p>Upload your resume</p>
+    </div>
+    <div class="col-md-3 text-center">
+      <span>3</span>
+      <p>Getting to know you</p>
+    </div>
+    <div class="col-md-3 text-center">
+      <span>4</span>
+      <p>While we find the right fit</p>
+    </div>
+    <div class="clear"></div>
+
+    <div class="">
+      <div class="demo">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-1">
+                  <span class="makeTop100 showLeft"><img src="./assets/images/leftarrow.png" alt=""></span>
+              </div>
+              <div class="col-md-10">
+                    <div id="testimonial-slider" class="owl-carousel">
+                        <div class="testimonial">
+                            <h3 class="title">Step1: Search for jobs and apply</h3>
+                            <div class="little_gap"></div>
+                            <p class="description">Quickly and easily search our open positions to find one that fits your skills and experience. We have jobs with top local companies in your area.</p>
+
+                        </div>
+     
+                        <div class="testimonial">
+                            <h3 class="title">Step1: Search for jobs and apply</h3>
+                            <div class="little_gap"></div>
+                            <p class="description">Quickly and easily search our open positions to find one that fits your skills and experience. We have jobs with top local companies in your area.</p>
+                        </div>
+     
+                        <div class="testimonial">
+                            <h3 class="title">Step1: Search for jobs and apply</h3>
+                            <div class="little_gap"></div>
+                            <p class="description">Quickly and easily search our open positions to find one that fits your skills and experience. We have jobs with top local companies in your area.</p>
+                        </div>
+
+                        <div class="testimonial">
+                            <h3 class="title">Step1: Search for jobs and apply</h3>
+                            <div class="little_gap"></div>
+                            <p class="description">Quickly and easily search our open positions to find one that fits your skills and experience. We have jobs with top local companies in your area.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-1">
+                    <span class="makeTop100 show_right"><img src="./assets/images/rightarrow.png" alt=""></span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="getNotify_div">
+  <div class="container">
+    <div class="col-md-4 text-right">
+      <div class="bell_icon">
+        <img src="./assets/images/bell.png" alt="">
+      </div>
+      <div class="nofify_text text-left">
+        <h5>GET JOBS NOTIFICATIONS</h5>
+        <p>Free Subscribe Our Newsletter Now!</p>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="input_search">
+        <input type="text" name="" id="" placeholder="Type your email address">
+        <span><i class="far fa-envelope"></i></span>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button><i class="fas fa-plus-circle"></i> SUBMIT</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="block4">
+  <div class="container">
+    <div class="large_gap"></div>
+    <h4>RECENT JOBS</h4>
+    <div class="col-md-9">
+      <div class="job_main_block">
+        <div class="all_jobs_list">
+          
+          <div class="single_job_list">
+            <div class="col-md-2">
+              <img src="./assets/images/1.jpg" alt="">
+            </div>
+            <div class="col-md-7">
+              <h5 class="jb_title">HTML5 Developer (1-2 Yrs Exp.)</h5>
+              <p class="comp_name">Webstrot Technology Pvt.Ltd.</p>
+              <p>
+                <span class="sal_p_a"><i class="far fa-money-bill-alt"></i> $12K - 15K P.A </span>
+                <span class="jb_loca"><i class="fas fa-map-marker-alt"></i> Los Angeles, Califonia PO, 455001</span>
+              </p>
+            </div>
+            <div class="col-md-3 text-right">
+              <div class="mini_gap"></div>
+                <div>
+                  <button class="job_fav"><i class="far fa-heart"></i></button>
+                  <button class="parttime_btn">PART TIME</button>
+                </div>
+                <div class="mini_gap"></div>
+                <div>
+                  <button class="apply_btn">APPLY</button>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="keywords">
+              <p>
+                <span><i class="fas fa-tags"></i></span>  
+                <span class="key_text">Keywords: </span>
+                <span class="key_all_text">UI Designer, Developer, Senior, IT Company, design, call center</span>
+              </p>
+            </div>
+          </div>
+
+
+
+          <div class="single_job_list">
+              <div class="col-md-2">
+                <img src="./assets/images/1.jpg" alt="">
+              </div>
+              <div class="col-md-7">
+                <h5 class="jb_title">HTML5 Developer (1-2 Yrs Exp.)</h5>
+                <p class="comp_name">Webstrot Technology Pvt.Ltd.</p>
+                <p>
+                  <span class="sal_p_a"><i class="far fa-money-bill-alt"></i> $12K - 15K P.A </span>
+                  <span class="jb_loca"><i class="fas fa-map-marker-alt"></i> Los Angeles, Califonia PO, 455001</span>
+                </p>
+              </div>
+              <div class="col-md-3 text-right">
+                <div class="mini_gap"></div>
+                  <div>
+                    <button class="job_fav"><i class="far fa-heart"></i></button>
+                    <button class="parttime_btn">PART TIME</button>
+                  </div>
+                  <div class="mini_gap"></div>
+                  <div>
+                    <button class="apply_btn">APPLY</button>
+                  </div>
+              </div>
+              <div class="clear"></div>
+              <div class="keywords">
+                <p>
+                  <span><i class="fas fa-tags"></i></span>  
+                  <span class="key_text">Keywords: </span>
+                  <span class="key_all_text">UI Designer, Developer, Senior, IT Company, design, call center</span>
+                </p>
+              </div>
+            </div>
+
+
+
+
+
+
+            <div class="single_job_list">
+                <div class="col-md-2">
+                  <img src="./assets/images/1.jpg" alt="">
+                </div>
+                <div class="col-md-7">
+                  <h5 class="jb_title">HTML5 Developer (1-2 Yrs Exp.)</h5>
+                  <p class="comp_name">Webstrot Technology Pvt.Ltd.</p>
+                  <p>
+                    <span class="sal_p_a"><i class="far fa-money-bill-alt"></i> $12K - 15K P.A </span>
+                    <span class="jb_loca"><i class="fas fa-map-marker-alt"></i> Los Angeles, Califonia PO, 455001</span>
+                  </p>
+                </div>
+                <div class="col-md-3 text-right">
+                  <div class="mini_gap"></div>
+                    <div>
+                      <button class="job_fav"><i class="far fa-heart"></i></button>
+                      <button class="parttime_btn">PART TIME</button>
+                    </div>
+                    <div class="mini_gap"></div>
+                    <div>
+                      <button class="apply_btn">APPLY</button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="keywords">
+                  <p>
+                    <span><i class="fas fa-tags"></i></span>  
+                    <span class="key_text">Keywords: </span>
+                    <span class="key_all_text">UI Designer, Developer, Senior, IT Company, design, call center</span>
+                  </p>
+                </div>
+              </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 pl0">
+      <div class="jb_loca">
+        <div class="single_div">
+          <h4>Jobs by Location</h4>
+          <ul>
+            <li>
+              <i class="fas fa-caret-right"></i>
+              Jobs in Delhi <span>(5521)</span>
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i>
+              Jobs in Mumbai <span>(5521)</span>
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i>
+              Jobs in Chennai <span>(5521)</span>
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i>
+              Jobs in Gurgaon <span>(5521)</span>
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i>
+              Jobs in Noida <span>(5521)</span>
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i>
+              Jobs in Kolkata <span>(5521)</span>
+            </li>
+            <li>
+              <i class="fas fa-caret-right"></i>
+              Jobs in Hyderabad <span>(5521)</span>
+            </li>
+          </ul>
+          <p><i class="fas fa-plus-circle"></i> <span>VIEW ALL LOCATION</span></p>
+          <div class="little_gap"></div>
+        </div>
+      </div>
+
+
+      <div class="jb_loca">
+          <div class="single_div">
+            <h4>Jobs by Category</h4>
+            <ul>
+              <li>
+                <i class="fas fa-caret-right"></i>
+                Graphic Designer <span>(5521)</span>
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i>
+                Engineering Jobs <span>(5521)</span>
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i>
+                Mainframe Jobs <span>(5521)</span>
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i>
+                Legal Jobs <span>(5521)</span>
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i>
+                IT Jobs <span>(5521)</span>
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i>
+                R&D Jobs <span>(5521)</span>
+              </li>
+              <li>
+                <i class="fas fa-caret-right"></i>
+                Government Jobs <span>(5521)</span>
+              </li>
+            </ul>
+            <p><i class="fas fa-plus-circle"></i> <span>VIEW ALL Category</span></p>
+            <div class="little_gap"></div>
+          </div>
+        </div>
+
+
+
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

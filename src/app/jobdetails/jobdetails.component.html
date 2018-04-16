@@ -1,0 +1,133 @@
+<div class="employee_block">
+  <app-header></app-header>
+  <div style="padding-bottom:120px"></div>
+</div>
+<div class="large_gap"></div>
+<div class="container">
+  <div class="col-md-9">
+<div class="single_job_list">
+    <div class="col-md-2">
+      <img src="./assets/images/1.jpg" alt="">
+    </div>
+    <div class="col-md-7">
+      <h5 class="jb_title">HTML5 Developer (1-2 Yrs Exp.)</h5>
+      <p class="comp_name">Webstrot Technology Pvt.Ltd.</p>
+      <p>
+        <span class="sal_p_a"><i class="far fa-money-bill-alt"></i> $12K - 15K P.A </span>
+        <span class="jb_loca"><i class="fas fa-map-marker-alt"></i> Los Angeles, Califonia PO, 455001</span>
+      </p>
+    </div>
+    <div class="col-md-3 text-right">
+      <div class="mini_gap"></div>
+        <div>
+          <button class="job_fav"><i class="far fa-heart"></i></button>
+          <button class="parttime_btn">PART TIME</button>
+        </div>
+        <div class="mini_gap"></div>
+        <div>
+          <button *ngIf="applyBtn" (click)="apply_Btn()" class="apply_btn">APPLY</button>
+          <button *ngIf="appliedBtn" class="applied_btn"><i class="fas fa-check"></i> Applied</button>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="keywords">
+      <p>
+        <span><i class="fas fa-tags"></i></span>  
+        <span class="key_text">Keywords: </span>
+        <span class="key_all_text">UI Designer, Developer, Senior, IT Company, design, call center</span>
+      </p>
+    </div>
+    <div class="jb_description">
+      <h4>Job Description</h4>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam debitis quasi magnam earum! Soluta cumque eveniet ex, optio iure provident sed sunt fuga suscipit consequuntur harum officia voluptatem nam illum incidunt. Sint vel officia quasi quia iure nemo repellat maiores ex, dolorum quisquam laborum quaerat in, libero cupiditate ullam voluptate aliquam officiis. Corrupti sit dicta, esse ratione aspernatur enim quae sint! Dolor libero ratione rerum odit minima, enim, voluptate sint modi voluptas id nobis fugiat, sit a quis harum mollitia eum architecto natus saepe! Voluptatibus assumenda facilis voluptate natus ex quibusdam delectus! Officiis nemo eaque maxime quaerat illo nostrum eligendi!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint incidunt pariatur quidem veniam neque ducimus accusamus placeat ab natus saepe nihil maiores, dolorem dolor esse sed. Numquam nemo optio similique atque, harum illo molestias modi! Dolores aut quia expedita autem deleniti ad earum, harum tenetur eius soluta nobis aspernatur, voluptas natus fuga, libero amet enim fugiat maiores? Minus ipsam consectetur error excepturi nam rerum voluptas deserunt possimus debitis illum minima nihil dolore dolores, non adipisci quasi eum, facilis deleniti blanditiis itaque. Quae fugit similique, veritatis in aspernatur est illum quam vitae aliquam et facilis tempora. Nemo assumenda, harum nisi fuga est asperiores animi accusantium! Itaque molestias, tenetur distinctio laboriosam, alias, animi vero non repellendus repudiandae quam magnam atque! Delectus adipisci ad, ratione neque eveniet accusamus. Perspiciatis, similique. Nihil aperiam quae rerum atque obcaecati ducimus ipsa impedit dicta earum explicabo nulla eos quod, ratione accusantium esse amet ab ut eaque ullam cumque autem quidem molestiae dignissimos nemo! Eius inventore beatae accusantium ipsa. Qui ad adipisci, pariatur, aliquam, quos odit cum incidunt repellat dicta obcaecati sequi doloribus dolores asperiores nostrum quibusdam quae consequuntur et explicabo totam aperiam eaque? Architecto nesciunt ducimus vero atque ab veritatis deserunt accusamus? Sed, assumenda animi. Distinctio, quidem?</p>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia sunt corrupti vel.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde iusto error quaerat consectetur possimus placeat commodi blanditiis eligendi, velit reiciendis dolorem! Atque sint tempora voluptatum, magni sed culpa consectetur totam.</p>
+
+      <div class="large_gap"></div>
+      <h4>Company Profile:</h4>
+      <p><b>Atos Pvt Ltd</b></p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente facere, quisquam quasi vel aperiam obcaecati dolore aut illum, dicta exercitationem beatae quidem enim eligendi nihil nostrum porro ex ratione voluptate, assumenda animi optio id? Nostrum reprehenderit saepe labore ullam quos soluta perferendis veritatis ipsam sunt voluptatem repellendus delectus molestiae omnis laudantium eum, error consectetur nobis totam illum quia quo laborum qui itaque odit! Recusandae, inventore molestiae? Quas illum eligendi, dicta odio laudantium quia suscipit perspiciatis repudiandae esse adipisci, quaerat officiis.</p>
+    </div>
+    <!-- <div class="keyoptions text-center">
+      <div class="col-md-4">
+        <p>Job posted: <b>Few Hours Ago</b></p>
+      </div>
+      <div class="col-md-4">
+        <p>Job Views: <b>12</b></p>
+      </div>
+      <div class="col-md-4">
+        <p>Job Applied by: <b>8</b></p>
+      </div>
+      <div class="clear"></div>
+    </div> -->
+    <div class="col-md-12 text-right">
+      <div class="mini_gap"></div>
+      <button *ngIf="applyBtn" class="apply_btn1" (click)="apply_Btn()">Apply this Job</button>
+      <button *ngIf="appliedBtn" class="applied_btn"><i class="fas fa-check"></i> Applied</button>
+      <button *ngIf="appliedBtn" class="cancel_btn" (click)="cancel_Btn()"><i class="fas fa-times"></i> Cancel this job</button>
+      <div class="mini_gap"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="col-md-3 p0">
+    <div class="jb_loca">
+      <div class="single_div">
+        <h4>Job status</h4>
+        <div class="col-md-6 p0 text-center">
+          <h5>Job Viewed</h5>
+          <p>33</p>
+        </div>
+        <div class="col-md-6 p0 text-center" style="border-right:0">
+          <h5>Job Applied</h5>
+          <p>33</p>
+        </div>
+        <div class="little_gap"></div>
+      </div>
+    </div>
+  <div class="little_gap"></div>
+    <div class="jb_loca">
+      <div class="single_div">
+        <h4>Company Details</h4>
+        <h5 class="company_name">Webstrot Technology Pvt.Ltd.</h5>
+        <p class="ratings_block">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="far fa-star"></i>
+        </p>
+        <div class="general_Details">
+          <div class="col-md-4"><p>Location</p></div>
+          <div class="col-md-8"><p><span>: Hyderabad, Telangana, India</span></p></div>
+          <div class="clear"></div>
+          <div class="col-md-4"><p>Size</p></div>
+          <div class="col-md-8"><p><span>: 1000+ employees</span></p></div>
+          <div class="clear"></div>
+          <div class="col-md-4"><p>Established</p></div>
+          <div class="col-md-8"><p><span>: 1986</span></p></div>
+          <div class="clear"></div>
+          <div class="col-md-4"><p>Industry</p></div>
+          <div class="col-md-8"><p><span>: Information Technology</span></p></div>
+          <div class="clear"></div>
+          <div class="col-md-4"><p>Jobs Open</p></div>
+          <div class="col-md-8"><p><span>: 24</span></p></div>
+          <div class="clear"></div>
+          <div class="col-md-4"><p>Reviews</p></div>
+          <div class="col-md-8"><p><span>: 24</span></p></div>
+          <div class="clear"></div>
+          <div class="col-md-4"><p>Visit Website</p></div>
+          <div class="col-md-8"><p><span>: www.companyName.com</span></p></div>
+          <div class="clear"></div>
+          <div class="col-md-6 p0"><span class="company_link">View company profile</span></div>
+          <div class="col-md-6 p0 text-right">
+            <button *ngIf="followBtn" (click)="follow_BTN()" class="follow_btn">Follow</button>
+            <button *ngIf="followingBtn" (click)="flwing_BTN()" class="following_btn">Following</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="clear"></div>
+</div>

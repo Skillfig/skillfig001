@@ -1,0 +1,27 @@
+<app-left-menu ></app-left-menu>
+<div class="employee_block">
+  <!-- <app-header></app-header> -->
+  <div style="padding-bottom:120px"></div>
+</div>
+<div class="large_gap"></div>
+
+<div class="container">
+    <h4>Currnetly Hiring positionsss</h4>
+    <div class="releated_jobs">
+      <div class="" *ngFor="let fe_list of [1,2,3,4,5,6,7,8,9,10,11,12,14,14,15]; let i=index;">
+        <div class="col-md-4">
+          <div class="single_company">
+            <div class="company_logo">
+              <img src="./assets/images/1.jpg" alt="">
+            </div>
+            <h4>Company Name Here</h4>
+            <p class="text-center location">Secundrabad, Telangana, India</p>
+            <div class="col-md-6 p0"><p class="text-left">1000+ employees</p></div>
+            <div class="col-md-6 p0"><p class="text-right">678 followers</p></div>
+            <button *ngIf="!selectedCompaniesList[i]" class="follows_btn" (click)="follw_btn(i)" >Follow</button>
+            <button *ngIf="selectedCompaniesList[i]" (click)="follwng_btn(i)" class="following_btn">Following</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

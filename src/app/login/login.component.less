@@ -1,0 +1,97 @@
+.reg_block
+{
+    width: 800px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background-color: #00acee;
+    z-index: 100;
+    box-shadow: 2px 3px 6px #000;
+    .logo_block
+    {
+        width: 45%;
+        float: left;
+        padding: 20px;
+        color: #fff;
+    }
+    .fileds_block
+    {
+        width: 55%;
+        float: left;
+        padding: 20px;
+        background-color: #fff;
+        h4
+        {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        label
+        {
+            display: block;
+            color: #333;
+            font-weight: 500;
+        }
+        input
+        {
+            display: block;
+            width: 100%;
+            border:0;
+            border-bottom: 1px solid #c8c8c8;
+            margin-bottom: 10px;
+            &:focus
+            {
+                border-bottom: 1px solid #00acee;
+            }
+        }
+        .f_p_text
+        {
+            font-size: 12px;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .log_btn
+        {
+            background-color: #00acee;
+            color: #fff;
+            border: 0;
+            padding: 7px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            box-shadow: 1px 1px 4px #444;
+        }
+        .fb_logo
+        {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: #fff;
+            background-color: #3b5998;
+            display: inline-block;
+            text-align: center;
+            padding: 7px;
+            margin-left: 7px;
+            cursor: pointer;
+        }
+        .gplus_logo
+        {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: #fff;
+            background-color: #d34836;
+            display: inline-block;
+            text-align: center;
+            padding: 7px;
+            margin-left: 7px;
+            cursor: pointer;
+        }
+    }
+}

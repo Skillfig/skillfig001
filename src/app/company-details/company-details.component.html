@@ -1,0 +1,123 @@
+<div class="employee_block">
+  <app-header></app-header>
+  <div style="padding-bottom:120px"></div>
+</div>
+<div class="large_gap"></div>
+
+<div class="container">
+  <div class="company_d_block">
+    <img src="./assets/images/companyProfileBanner.jpg" alt="" class="img_100">
+    <div class="overlay"></div>
+  </div>
+  <div class="cmp_img_tabs">
+    <div class="col-md-2 text-center">
+      <img src="./assets/images/1.jpg" alt="" class="companyLogo">
+    </div>
+    <div class="col-md-10">
+      <h3>Place Company Name Here</h3>
+      <ul class="company_tabs">
+        <li (click)="about()" [ngClass]="{'active_company_tab': div_Element_Id =='0'}">About</li>
+        <li (click)="jobs()" [ngClass]="{'active_company_tab': div_Element_Id =='1'}">Jobs (3)</li>
+        <li (click)="photos()" [ngClass]="{'active_company_tab': div_Element_Id =='2'}">Photos (10)</li>
+        <li (click)="reviews()" [ngClass]="{'active_company_tab': div_Element_Id =='3'}">Reviews</li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="large_gap"></div>
+    <div class="company_blocks">
+      <div class="about_company" [ngClass]="{'hideIt': div_Element_Id !='0'}">
+        <h4>About:</h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure pariatur, placeat quod consequatur doloribus quasi, voluptate possimus aliquid quos vero illum dicta, incidunt illo ratione ipsam soluta repellat architecto? Aspernatur!. </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum accusantium eveniet, adipisci assumenda tempore beatae quibusdam est non consectetur tenetur aliquid impedit fugit cum molestiae?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo est, aperiam earum et qui obcaecati alias sapiente optio quod, molestias porro laudantium expedita voluptatibus natus id velit impedit, sed praesentium nostrum ducimus doloribus ab omnis? Facilis cum unde harum suscipit eius voluptate expedita labore!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex omnis nobis exercitationem atque? Ipsam in vitae dicta maxime iste corporis culpa consequuntur reprehenderit laboriosam totam illo qui quaerat placeat repellendus nemo blanditiis ducimus quas harum esse sapiente, quasi fuga. Aperiam sunt tenetur repellendus beatae maxime quasi possimus magni dolores quo, ratione sint praesentium, ipsam velit hic tempore veniam reprehenderit adipisci! Hic eos, sequi possimus est, maxime minima quis commodi molestias quod repellendus pariatur, eum distinctio doloremque nostrum reiciendis asperiores nesciunt aperiam libero atque! Sunt, hic harum. Explicabo iste enim rem deserunt eligendi? Assumenda iure similique consectetur incidunt illum suscipit esse nam doloremque laborum in rem consequatur libero facilis accusamus laudantium, quaerat quae eligendi vel. Aperiam, magni nobis? Pariatur voluptates laudantium illum voluptatum repudiandae impedit odit praesentium hic unde enim odio deleniti expedita atque cum numquam laboriosam, veniam veritatis iusto quaerat corrupti omnis. Fuga, voluptatem? Impedit, nemo. Nesciunt sequi est eaque molestias harum facere. Officiis ullam optio voluptates. Nihil, enim aut optio id architecto officiis cumque aliquid doloremque, eum, ex fugiat qui. Animi laudantium ratione delectus consequatur saepe obcaecati neque vel quaerat vitae in totam eos magnam porro atque sunt nisi unde harum, eligendi adipisci, alias iusto blanditiis earum pariatur. Ut, enim facere neque, ducimus voluptatum debitis adipisci laudantium, voluptatibus ex eaque animi. Quae rerum, atque incidunt aspernatur necessitatibus optio voluptates dignissimos repudiandae veritatis numquam placeat soluta, ab quis beatae facilis consequatur ipsum impedit deserunt facere quas vitae ut architecto fugiat. Esse aperiam voluptatem aliquid fugit voluptate delectus, placeat atque cupiditate.</p>
+      </div>
+
+      <div class="jobs_block" [ngClass]="{'hideIt': div_Element_Id !='1'}">
+        <h4>Opening Jobs</h4>
+        <div class="releated_jobs">
+          <div class="" *ngFor="let fe_list of [1,2,3]">
+            <div class="single_job_list">
+              <div class="col-md-2">
+                <img src="./assets/images/1.jpg" alt="">
+              </div>
+              <div class="col-md-10">
+                <h5 class="jb_title">HTML5 Developer (1-2 Yrs Exp.)</h5>
+                <p class="comp_name">Webstrot Technology Pvt.Ltd.</p>
+                <p>
+                  <span class="sal_p_a"><i class="far fa-money-bill-alt"></i> $12K - 15K P.A </span>
+                  <span class="jb_loca"><i class="fas fa-map-marker-alt"></i> Los Angeles, Califonia PO, 455001</span>
+                </p>
+              </div>
+              <div class="clear"></div>
+
+              <div class="keywords">
+                <p>
+                  <span><i class="fas fa-tags"></i></span>  
+                  <span class="key_text">Keywords: </span>
+                  <span class="key_all_text">UI Designer, Developer, Senior, IT Company, design, call center</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="photosBlock" [ngClass]="{'hideIt': div_Element_Id !='2'}">
+        <h4>Photos</h4>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/1.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/2.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/1.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/2.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/1.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/2.jpg" class="img_300" alt=""></div>
+        <div class="clear"></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/1.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/2.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/1.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/2.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/1.jpg" class="img_300" alt=""></div>
+        <div class="col-md-2"><img src="./assets/images/companyphotos/1.jpg" class="img_300" alt=""></div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="review_block" [ngClass]="{'hideIt': div_Element_Id !='3'}">
+        <h4>Review and Ratings</h4>
+        <div class="rating_block">
+          <div class="col-md-3"> <h5>Total Average rating :</h5></div>
+          <div class="col-md-9 p0">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="reviews_block">
+          <ul>
+            <li *ngFor="let fe_list of [1,2,3]">
+              <img src="./assets/images/girl.jpg" alt="">
+              <p>Mr.R RajKumar Singh</p>
+              <p class="ratings">
+                <span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+                <span><i class="fas fa-calendar-alt"></i> 28-03-2018 </span>
+                <span><i class="fas fa-clock"></i> 22:00</span>
+              </p>
+              <p class="comment_review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam molestiae veniam debitis. Corrupti facere saepe totam obcaecati quos eveniet eaque quisquam cumque ab veniam. Eaque, qui. Nam rerum facilis delectus reiciendis architecto, amet et sapiente fugiat est nemo, accusamus quidem reprehenderit asperiores dicta, dolorum esse commodi atque sit similique illo.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="large_gap"></div>
+</div>

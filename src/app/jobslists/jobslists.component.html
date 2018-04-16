@@ -1,0 +1,136 @@
+<div class="employee_block">
+<app-header></app-header>
+<div style="padding-bottom:120px"></div>
+</div>
+
+
+
+<div class="block4">
+    <div class="container">
+      <div class="large_gap"></div>
+      <!-- <h4>RECENT JOBS</h4> -->
+      <div class="col-md-3 pl0">
+          <div class="jb_loca">
+            <div class="single_div">
+              <h4>Location</h4>
+              <ul class="style-5">
+                <li *ngFor="let location of filtercities">
+                  <input type="checkbox" name="" id="">{{location}}
+                </li>
+              </ul>
+              <div class="little_gap"></div>
+            </div>
+          </div>
+    
+    
+          <div class="jb_loca">
+            <div class="single_div">
+              <h4>Roles</h4>
+              <ul class="style-5">
+                <li *ngFor="let Roles of filteredRoles">
+                    <input type="checkbox" name="" id="">{{Roles}}
+                </li>
+              </ul>
+              <div class="little_gap"></div>
+            </div>
+          </div>
+          
+          <div class="jb_loca">
+              <div class="single_div">
+                <h4>Companies</h4>
+                <ul class="style-5">
+                  <li *ngFor="let companies of filteredCompanies">
+                      <input type="checkbox" name="" id="">{{companies}}
+                  </li>
+                </ul>
+                <div class="little_gap"></div>
+              </div>
+            </div>
+
+            <div class="jb_loca">
+                <div class="single_div">
+                  <h4>Functions hiring </h4>
+                  <ul class="style-5">
+                    <li *ngFor="let functions of filteredFunctional">
+                        <input type="checkbox" name="" id="">{{functions}}
+                    </li>
+                  </ul>
+                  <div class="little_gap"></div>
+                </div>
+              </div>
+    
+              <div class="jb_loca">
+                  <div class="single_div">
+                    <h4>Industries hiring </h4>
+                    <ul class="style-5">
+                      <li *ngFor="let industype of filteredIndustryType">
+                          <input type="checkbox" name="" id="">{{industype}}
+                      </li>
+                    </ul>
+                    <div class="little_gap"></div>
+                  </div>
+                </div>
+    
+                <div class="jb_loca">
+                    <div class="single_div">
+                      <h4>Levels hiring </h4>
+                      <ul class="style-5">
+                        <li *ngFor="let level of filteredLevel">
+                            <input type="checkbox" name="" id="">{{level}}
+                        </li>
+                      </ul>
+                      <div class="little_gap"></div>
+                    </div>
+                  </div>
+        </div>
+      <div class="col-md-9">
+        <div class="job_main_block">
+          <div class="all_jobs_list">
+            
+            <div class="single_job_list" *ngFor="let fe_list of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20] |  paginate: { itemsPerPage: 10, currentPage: p }">
+              <div class="col-md-2">
+                <img src="./assets/images/1.jpg" alt="">
+              </div>
+              <div class="col-md-7">
+                <h5 class="jb_title">HTML5 Developer (1-2 Yrs Exp.)</h5>
+                <p class="comp_name">Webstrot Technology Pvt.Ltd.</p>
+                <p>
+                  <span class="sal_p_a"><i class="far fa-money-bill-alt"></i> $12K - 15K P.A </span>
+                  <span class="jb_loca"><i class="fas fa-map-marker-alt"></i> Los Angeles, Califonia PO, 455001</span>
+                </p>
+              </div>
+              <div class="col-md-3 text-right">
+                <div class="mini_gap"></div>
+                  <div>
+                    <button class="job_fav"><i class="far fa-heart"></i></button>
+                    <button class="parttime_btn">PART TIME</button>
+                  </div>
+                  <div class="mini_gap"></div>
+                  <div>
+                    <button class="apply_btn">APPLY</button>
+                  </div>
+              </div>
+              <div class="clear"></div>
+              <div class="keywords">
+                <p>
+                  <span><i class="fas fa-tags"></i></span>  
+                  <span class="key_text">Keywords: </span>
+                  <span class="key_all_text">UI Designer, Developer, Senior, IT Company, design, call center</span>
+                </p>
+              </div>
+            </div>
+  
+  
+  
+           
+  
+                <div>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls></div>
+          </div>
+        </div>
+      </div>
+   
+      <div class="clear"></div>
+  <div class="large_gap"></div>
+    </div>
+  </div>

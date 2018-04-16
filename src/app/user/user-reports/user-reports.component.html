@@ -1,0 +1,137 @@
+<div class="content_margin">
+    <h3 class="main_content">Reports</h3>
+    <div class="clear"></div>
+    <div class="little_gap"></div>
+    <div class="report_dets">
+        <div class="report_lng" *ngFor="let items of [0,1,2,3,4]">
+            <div class="col-md-1 p0">
+                <img src="assets/images/courses/3.png">
+            </div>
+            <div class="col-md-2 p0">
+                <h3>HTML 5</h3>
+            </div>
+            <div class="col-md-2 p0">
+                <p class="text-center score"><i class="fas fa-box"></i>&nbsp; Score : 85 </p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Jobs </a></p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Companies</a></p>
+            </div>
+            <div class="col-md-1 p0">
+            <p class="text-right report_add"><i class="fas" [ngClass]="{'fa-angle-up': sample, 'fa-angle-down':!sample}" (click)="fulldetails()"></i></p>
+            </div>
+            <div class="clear"></div>
+            <div   [@myanimation] = "state" class="report_ad_details" [ngClass]="{'show': sample == true }">
+                <div  goals class="col-md-6 text-center">
+                    <p>Test Name</p>
+                    <p>Test 1</p>
+                    <p>Test 2</p>
+                    <p>Test 3</p>
+                    <p>Test 4</p>
+                    <p>Test 5</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <p>Total Marks</p>
+                    <p>30</p>
+                    <p>50</p>
+                    <p>50</p>
+                    <p>50</p>
+                    <p>50</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="report_lng">
+            <div class="col-md-1 p0">
+                <img src="assets/images/courses/6.png">
+            </div>
+            <div class="col-md-2 p0">
+                <h3>JAVA SCRIPT</h3>
+            </div>
+            <div class="col-md-2 p0">
+                <p class="text-center score"><i class="fas fa-box"></i>&nbsp; Score : 70 </p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Jobs </a></p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Companies</a></p>
+            </div>
+            <div class="col-md-1 p0">
+            <p class="text-right report_add"><i class="fas fa-angle-down"></i></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="report_lng">
+            <div class="col-md-1 p0">
+                <img src="assets/images/courses/9.png">
+            </div>
+            <div class="col-md-2 p0">
+                <h3>PHP</h3>
+            </div>
+            <div class="col-md-2 p0">
+                <p class="text-center score"><i class="fas fa-box"></i>&nbsp; Score : 85 </p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Jobs </a></p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Companies</a></p>
+            </div>
+            <div class="col-md-1 p0">
+            <p class="text-right report_add"><i class="fas fa-angle-down"></i></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="report_lng">
+            <div class="col-md-1 p0">
+                <img src="assets/images/courses/2.png">
+            </div>
+            <div class="col-md-2 p0">
+                <h3>CSS</h3>
+            </div>
+            <div class="col-md-2 p0">
+                <p class="text-center score"><i class="fas fa-box"></i>&nbsp; Score : 85 </p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Jobs </a></p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Companies</a></p>
+            </div>
+            <div class="col-md-1 p0">
+            <p class="text-right report_add"><i class="fas fa-angle-down"></i></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="report_lng">
+            <div class="col-md-1 p0">
+                <img src="assets/images/courses/1.png">
+            </div>
+            <div class="col-md-2 p0">
+                <h3>CODEIGNITER</h3>
+            </div>
+            <div class="col-md-2 p0">
+                <p class="text-center score"><i class="fas fa-box"></i>&nbsp; Score : 85 </p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Jobs </a></p>
+            </div>
+            <div class="col-md-3 p0">
+                <p class="text-center rep_jobs"><a>Related Companies</a></p>
+            </div>
+            <div class="col-md-1 p0">
+            <p class="text-right report_add"><i class="fas fa-angle-down"></i></p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="container">
+<div class="left_menu">
+    <ul>
+      <li>
+        <span>Profile UserName</span>
+        <img src="./assets/images/defaultProf.jpg" alt="">
+      </li>
+      <div class="clear"></div>
+      <li [routerLink]="['./']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+        true}"><a ><i class="fas fa-home"></i> Dashboard</a></li>
+      <li [routerLink]="['user-profile']" routerLinkActive="active-link"><a><i class="fas fa-edit"></i> Edit Profile</a></li>
+      <li [routerLink]="['user-skillProfile']" routerLinkActive="active-link"><a><i class="fas fa-edit"></i> Skill Profile</a></li>
+      <li [routerLink]="['user-inbox']" routerLinkActive="active-link"><a><i class="fas fa-envelope"></i> Inbox</a></li>
+      <li [routerLink]="['user-follwers']" routerLinkActive="active-link"><a><i class="fas fa-users"></i> Followers</a></li>
+      <li [routerLink]="['reports']" routerLinkActive="active-link"><a><i class="far fa-file-alt"></i> Reports</a></li>
+      <li [routerLink]="['user-job']" routerLinkActive="active-link"><a><i class="fas fa-suitcase"></i> Jobs</a></li>
+      <li [routerLink]="['user-changePwd']" routerLinkActive="active-link"><a><i class="fas fa-lock"></i> Change password</a></li>
+    </ul>
+  </div>
+
+    <router-outlet></router-outlet>
+</div>
+

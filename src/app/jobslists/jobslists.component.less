@@ -1,0 +1,230 @@
+@heading_text: #025678;
+.style-5::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.style-5::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.style-5::-webkit-scrollbar-thumb
+{
+	background-color: #0ae;
+	
+	background-image: -webkit-gradient(linear, 0 0, 0 100%,
+	                   color-stop(.5, rgba(255, 255, 255, .2)),
+					   color-stop(.5, transparent), to(transparent));
+}
+
+
+
+.employee_block
+{
+	background-image: url('./assets/images/employee_list.jpg');
+	background-repeat: no-repeat;
+	background-size: cover
+}
+.block4
+{
+    background-color: #eaeaea;
+    h4
+    {
+        color: @heading_text;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .job_main_block
+    {
+        background-color: #f9f9f9;
+        padding: 8px;
+    }
+    .single_job_list
+    {
+        border: 1px solid #d8d8d8;
+        background-color: #fff;
+        margin-bottom: 20px;
+        padding-top: 10px;
+        transition: 0.3s;
+        .jb_title
+        {
+            color: #1d2031;
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .comp_name
+        {
+            color: #23c0e9;
+            font-size: 16px;
+            font-weight: 500;
+        }   
+        .sal_p_a
+        {  
+            color: #1d2031;
+            font-size: 15px;
+            font-weight: 500;
+            i
+            {
+                color: #f36969
+            }
+        }
+        .jb_loca
+        {
+            margin-left: 22px;
+            color: #787878;
+            font-size: 15px;
+            font-weight: 500;
+            i
+            {
+                color: #f36969
+            }
+        }
+        .job_fav
+        {
+            border: 2px solid #eaeaea;
+            background-color: transparent;
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            font-size: 14px;
+            padding: 5px;
+            color: #f36969;
+            margin-right: 4px;
+        }
+        .parttime_btn
+        {
+            background-color: #36d09c;
+            border: 0;
+            height: 32px;
+            border-radius: 9px;
+            color: #fff;
+            font-weight: 500;
+            padding: 0 16px;
+            width: 108px;
+        }
+        .apply_btn
+        {
+            background-color: #f36969;
+            border: 0;
+            height: 32px;
+            border-radius: 9px;
+            color: #fff;
+            font-weight: 500;
+            padding: 0 16px;
+            width: 108px;
+        }
+        .keywords
+        {
+            background-color: #f9f9f9;
+            border-top: 1px solid #d8d8d8;
+            padding: 13px 0px 13px 44px;
+            transition: 0.3s;
+            p
+            {
+                margin: 0;
+            }
+            span
+            {
+                i
+                {
+                    color: #23c0e9
+                }
+            }
+        }
+        .key_text
+        {
+            color: #1d2031;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .key_all_text
+        {
+            color: #787878;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+    }
+    .single_job_list:hover
+    {
+        border:1px solid #23c0e9;
+        .keywords
+        {
+            background-color: #23c0e9;
+            span i
+            {
+                color: #fff;
+            }
+            .key_text
+            {
+                color: #fff;
+            }
+            .key_all_text
+            {
+                color: #fff;
+            }
+        }
+    }
+    .jb_loca
+    {
+       /* background-color: #f9f9f9;
+        padding: 9px; */
+        margin-bottom: 10px;
+    }
+    .single_div
+    {
+        border: 1px solid #d8d8d8;
+        background-color: #fff;
+        padding-bottom: 4px;
+        border-bottom: 3px solid #23c0e9;
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+        h4
+        {
+            background-color: #23c0e9;
+            color: #fff;
+            margin: 0;
+            padding: 13px;
+            font-size: 18px;
+            margin-bottom: 14px;
+        }
+        ul
+        {
+            padding-left: 18px;
+            height: 207px;
+            overflow-y: scroll;
+            li
+            {
+                list-style-type: none;
+                color: #787878;
+                font-weight: 500;
+                font-size: 14px;
+                margin: 3px 0;
+                input
+                {
+                    margin-right: 10px;
+                }
+                i
+                {
+                    color: #f36969;
+                }
+                span
+                {
+                    color: #23c0e9;
+                }
+            }
+        }
+        p
+        {
+            color: #23c0e9;
+            font-weight: 500;
+            font-size: 16px;
+            padding-left: 18px;
+        }
+    }
+    
+   
+}

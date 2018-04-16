@@ -1,0 +1,107 @@
+<div class="reg_block" *ngIf="callLoginPage">
+  <span class="closePopup" (click)="closePopup()">X</span>
+    <div class="logo_block text-center">
+      <h1>LOGO</h1>
+      <h3>SkillFig</h3>
+      <ul>
+        <li> Lorem ipsum dolor sit amet </li>
+        <li> amet consectetur adipisicing elit</li>
+      </ul>
+      <div class="large_gap"></div>
+      <div class="clear"></div>
+      <div class="large_gap"></div>
+      <span *ngIf="showinLogin" (click)="showRegBlock()">New User? Sign Up <span>Here</span></span>
+      <span *ngIf="showinreg" (click)="showLoginBlock()">Already a User? Login <span>Here</span></span>
+    </div>
+    <div class="fileds_block">
+      <div class="login_block" *ngIf="login_filed_block">
+        <h4>Login</h4>
+        <a class="log_btn" [routerLink]="['./user']">User</a>
+        <a class="log_btn" [routerLink]="['./recruiter']">Recruiter</a>
+        <form [formGroup]="myForm">
+          <label for="">Email / Mobile no</label>
+          <input type="text" name="" formControlName="login_EmailMobo">
+          <label for="">Password</label>
+          <input type="password" name="" formControlName="login_pwd">
+          <div class="little_gap"></div>
+          <div class="text-right"><span class="f_p_text">Forgot Password?</span></div>
+          <div class="large_gap"></div>
+          <div class="col-md-4 p0">
+            <button class="log_btn">Login</button>
+          </div>
+          <div class="col-md-8 text-right p0">
+            <div>
+              <span>Or Login with</span>
+              <span class="fb_logo"><i class="fab fa-facebook-f"></i></span>
+              <span class="gplus_logo"><i class="fab fa-google-plus-g"></i></span>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="little_gap"></div>
+        </form>
+      </div>
+
+
+      <div class="regi_block" *ngIf="reg_filed_block">
+          <h4>Register</h4>
+          <form>
+            <label for="">Name</label>
+            <input type="text" name="" id="">
+            <label for="">Email</label>
+            <input type="text" name="" id="">
+            <label for="">Password</label>
+            <input type="password" name="" id="">
+            <label for="">Mobile no</label>
+            <input type="text" name="" id="">
+            <div class="large_gap"></div>
+            <div class="col-md-4 p0">
+              <button class="log_btn">Register</button>
+            </div>
+            <div class="col-md-8 text-right p0">
+              <div>
+                <span>Or Register with</span>
+                <span class="fb_logo"><i class="fab fa-facebook-f"></i></span>
+                <span class="gplus_logo"><i class="fab fa-google-plus-g"></i></span>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="little_gap"></div>
+          </form>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+
+ <div class="overlay" *ngIf="overlay_view"></div>
+
+
+
+
+<div class="top_nav">
+    <div class="container">
+      <div class="col-md-2">
+        <h1 [routerLink]="['/']">LOGO</h1>
+      </div>
+      <div class="col-md-0">
+        <ul class="main_nav">
+          <li>Jobs</li>
+          <li>Employer</li>
+          <li>Tests</li>
+          <li>Network</li>
+          <li> Company</li>
+          <li> Institutes</li>
+          <li class="login_block" (click)="showLogin()">LOGIN / REGISTER</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  <!-- <div>
+    <div class="overlay hideIt"></div>
+    <app-login></app-login>  
+</div> -->
