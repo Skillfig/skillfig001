@@ -17,33 +17,33 @@
     </div>
     <div class="clear"></div>
     <div class="text-right">
-      <span class="btn_like" (click)="profileedit = !profileedit">Edit</span>
+      <span class="btn_like" (click)="profileedit()">Edit</span>
     </div>
   </div> 
-  <div class="profile_edit" *ngIf="profileedit">
-    <form action="">
+  <div class="profile_edit" *ngIf="editProfile">
+    <form [formGroup]="profileform" (ngSubmit)="profileUpdate(profileform.value)">
       <div class="col-md-3">
-        <input #profInput type="file" style="display:none" (change)="updateFile(profInput)">
-        <img src="./assets/images/default-image.jpg" class="img_100 profile_img" alt="" (click)="profInput.click()">
-      </div>
+        <!-- <input #profInput type="file" style="display:none" (change)="updateFile(profInput)">
+        <img src="./assets/images/default-image.jpg" class="img_100 profile_img" alt="" (click)="profInput.click()">-->
+      </div> 
       <div class="col-md-9">
       <div class="col-md-6">
           <p class="designa">
             <label for="">Full Name</label>
-            <input type="text" name="" placeholder="Enter Full Name" id="">
+            <input type="text" name="userName" formControlName="userName" placeholder="Enter Full Name">
           </p>
         </div>
         <div class="col-md-6">
           <p class="companyname">
             <label for="">Email</label>
-            <input type="text" name="" placeholder="Enter Email" id="">
+            <input type="text"  name="email" formControlName="email" placeholder="Enter Email" id="">
           </p>
         </div>
         <div class="clear"></div>
         <div class="col-md-6">
           <p class="companyname">
             <label for="">Gender</label>
-            <select name="" id="">
+            <select formControlName="gender">
               <option value="">Select Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -53,41 +53,41 @@
         <div class="col-md-6">
           <p class="companyname">
             <label for="">Mobile</label>
-            <input type="text" name="" placeholder="Enter Email" id="">
+            <input type="text"  name="mobile" formControlName="mobile" placeholder="Enter Mobile number">
           </p>
         </div>
         <div class="clear"></div>
         <div class="col-md-6">
           <p class="designa">
             <label for="">Designation</label>
-            <input type="text" name="" placeholder="Enter Designation" id="">
+            <input type="text" name="designation" formControlName="designation" placeholder="Enter Designation">
           </p>
         </div>
         <div class="col-md-6">
           <p class="companyname">
             <label for="">Currently working at</label>
-            <input type="text" name="" placeholder="Currently working at" id="">
+            <input type="text" name="cur_company" formControlName="cur_company" placeholder="Currently working at" id="">
           </p>
         </div>
         <div class="clear"></div>
         <div class="col-md-6">
           <p class="companyname">
             <label for="">Total Experience</label>
-            <input type="text" name="" placeholder="Total Experience" id="">
+            <input type="text" name="experience" formControlName="experience" placeholder="Total Experience" id="">
           </p>
         </div>
         <div class="col-md-6">
           <p class="companyname">
             <label for="">Date of Birthday</label>
-            <input type="text" name="" placeholder="Enter date of birth" id="">
+            <ng-datepicker [(ngModel)]="date" formControlName="dateOfBirth" [options]="dateOptions"></ng-datepicker>
           </p>
         </div>
         <div class="clear"></div>
         
       </div>
       <div class="text-right">
-          <span class="btn_like_cancel">Cancel</span>
-          <button class="save_btn">Save</button>
+          <button type="submit" class="save_btn">Save</button>
+          <span class="btn_like_cancel" (click) ="Profilecancel()">Cancel</span>
       </div>
     </form>
     <div class="clear"></div>
@@ -132,49 +132,54 @@
           </li>
         </ul>
         <div class="text-right">
-          <span class="btn_like" (click)="eduEdit = !eduEdit">Edit</span>
+          <span class="btn_like" (click)="eduEditoptions()">Edit</span>
         </div>
     </div>
     <div class="clear"></div>
-    <div class="education_edit">
-      <ul>
-        <li *ngFor="let item of [0,1,2].slice(0,num)">
+    <div class="education_edit" *ngIf="eduEdit">
+    <form [formGroup]="educationForm" (ngSubmit)="addeduPost(educationForm.value)">
+      <ul formArrayName="addeduitems">
+        <li  *ngFor="let dat of this.educationForm.controls.addeduitems.controls;let i = index;" [formGroupName]="i">                <!--*ngFor="let item of [0,1,2]"-->
           <div class="col-md-5">
             <p>
               <label for="">College Name</label>
-              <input type="text" name="" placeholder="Enter college name" id="">
+              <input type="text" name="CollegeName" formControlName="CollegeName" placeholder="Enter college name" required>
             </p>
           </div>
           <div class="col-md-5">
             <p>
               <label for="">Degree Name</label>
-              <input type="text" name="" placeholder="Enter degree name" id="">
+              <input type="text"  name="degreeName" formControlName="degreeName" placeholder="Enter degree name" required>
             </p>
           </div>
           <div class="col-md-2 text-right">
-              <span class="btn_like_delete">Delete</span>
+              <span class="btn_like_delete" *ngIf="educationForm.controls.addeduitems.controls.length > 1" (click)="deleteeditems(i)">Delete</span>
           </div>
           <div class="clear"></div>
           <div class="col-md-5">
             <p>
               <label for="">Course Name</label>
-              <input type="text" name="" placeholder="Enter course name" id="">
+              <input type="text" name="CourseName" formControlName="CourseName" placeholder="Enter course name" required>
             </p>
           </div>
           <div class="col-md-5">
             <div class="col-md-6 pl0">
               <p>
                 <label for="">Course Start</label>
-                <select name="" id="">
-                  <option value="item"  *ngFor="let item of educateTime">{{item}}</option>
+                <select formControlName="Startyear" required>
+                  <option value="">Select Start year</option>
+                  <option value="year1">1990</option>
+                  <option value="year2">1991</option>
                 </select>
               </p>
             </div>
             <div class="col-md-6 pr0">
             <p>
               <label for="">Course End</label>
-              <select name="" id="">
-                <option value="item"  *ngFor="let item of educateTime">{{item}}</option>
+              <select formControlName="Endyear" required>
+                <option value="">Select End year</option>
+                <option value="year3">1995</option>
+                <option value="year4">1996</option>
               </select>
             </p>
             </div>
@@ -183,11 +188,12 @@
          <div class="clear"></div>
         </li>
       </ul>
-      <div class="text-right">
-        <span class="btn_like_cancel">Cancel</span>
-        <span class="btn_like">Add</span>
-        <button class="save_btn">Save</button>
+      <div class="text-right">  
+        <span class="btn_like_cancel" (click)="educancel()">Cancel</span>
+        <span  class="btn_like" (click)="addedudetails()">Add</span>
+        <button type="submit" class="save_btn" [disabled]="!educationForm.valid">Save</button>
       </div>
+    </form>
     </div>
   </div>
   <div class="clear"></div>
@@ -213,48 +219,47 @@
             </li>
           </ul>
           <div class="text-right">
-            <span class="btn_like" (click)="eduEdit = !eduEdit">Edit</span>
+            <span class="btn_like" (click)="expOptions()">Edit</span>
           </div>
       </div>
       <div class="clear"></div>
-      <div class="education_edit">
-        <ul>
-          <li *ngFor="let item of [0,1,2]">
+      <div class="education_edit" *ngIf="expCondition">
+        <form [formGroup]="experienceForm" (ngSubmit)="addexperience(experienceForm.value)">
+            <ul formArrayName="expadditems">
+            <li  *ngFor="let dat of this.experienceForm.controls.expadditems.controls;let i = index;" [formGroupName]="i">     
             <div class="col-md-5">
               <p>
                 <label for="">Company Name</label>
-                <input type="text" name="" placeholder="Enter company name" id="">
+                <input type="text" name="CompanyName" formControlName="CompanyName" placeholder="Enter company name">
               </p>
             </div>
             <div class="col-md-5">
               <p>
                 <label for="">Designation</label>
-                <input type="text" name="" placeholder="Enter Designation" id="">
+                <input type="text" name="Designation" formControlName="Designation" placeholder="Enter Designation">
               </p>
             </div>
             <div class="col-md-2 text-right">
-                <span class="btn_like_delete">Delete</span>
+                <span class="btn_like_delete" *ngIf="experienceForm.controls.expadditems.controls.length > 1" (click)="deleteexpitems(i)">Delete</span>
             </div>
             <div class="clear"></div>
             <div class="col-md-5">
               <p>
                 <label for="">Location</label>
-                <input type="text" name="" placeholder="Enter Location" id="">
+                <input type="text"  name="location" formControlName="location"  placeholder="Enter Location" id="">
               </p>
             </div>
             <div class="col-md-5">
               <div class="col-md-6 pl0">
                 <p>
                   <label for="">Started</label>
-                  <ng-datepicker [(ngModel)]="date" class="datePicker"></ng-datepicker>
+                  <ng-datepicker [(ngModel)]="date" formControlName="Started" class="datePicker"></ng-datepicker>
                 </p>
               </div>
               <div class="col-md-6 pr0">
               <p>
                 <label for="">Upto</label>
-                <select name="" id="">
-                  <option value="item"  *ngFor="let item of educateTime">{{item}}</option>
-                </select>
+                <ng-datepicker [(ngModel)]="date123" formControlName="Upto" class="datePicker"></ng-datepicker>
               </p>
               </div>
               <div class="clear"></div>
@@ -263,9 +268,13 @@
           </li>
         </ul>
         <div class="text-right">
-          <span class="btn_like_cancel">Cancel</span>
-          <button class="save_btn">Save</button>
+            <span class="btn_like_cancel" (click)="expcancel()">Cancel</span>
+            <span  class="btn_like" (click)="addexpdetails()">Add</span>
+            <button type="submit" class="save_btn" [disabled]="!educationForm.valid">Save</button>
+<!--           <span class="btn_like_cancel">Cancel</span>
+          <button class="save_btn">Save</button> -->
         </div>
+        </form>
       </div>
     </div>
     <div class="clear"></div> 
@@ -296,10 +305,11 @@
           <li>Digital Marketing</li>
         </ul>
         <div class="text-right">
-          <span class="btn_like" (click)="eduEdit = !eduEdit">Edit</span>
+          <span class="btn_like" (click)="skilloptions = !skilloptions">Edit</span>
         </div>
       </div>
-      <div class="skill_edit">
+      <div class="little_gap"></div>
+      <div class="skill_edit" *ngIf="skilloptions">
         <div class="input_search_skills">
           <input id="country" placeholder="Enter your skills" type="text" class="validate filter-input" [(ngModel)]=query (keyup)=filter()>
           <!-- <span><img src="./assets/images/search.png" alt=""></span> -->
@@ -311,6 +321,7 @@
         </div>
         <div class="mini_gap"></div>
       </div>
+      <div class="little_gap"></div>
       <ul class="main_skill_div">
         <li class="single_skil_list" *ngFor="let items of selectarray">{{items}} <span class="delete_skill_list" (click)="remove(items)">X</span></li>
       </ul>

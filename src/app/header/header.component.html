@@ -16,13 +16,12 @@
     <div class="fileds_block">
       <div class="login_block" *ngIf="login_filed_block">
         <h4>Login</h4>
-        <a class="log_btn" [routerLink]="['./user']">User</a>
-        <a class="log_btn" [routerLink]="['./recruiter']">Recruiter</a>
-        <form [formGroup]="myForm">
+        <a class="log_btn" [routerLink]="['./user']">Login</a>
+        <form>
           <label for="">Email / Mobile no</label>
-          <input type="text" name="" formControlName="login_EmailMobo">
+          <input type="text" name="">
           <label for="">Password</label>
-          <input type="password" name="" formControlName="login_pwd">
+          <input type="password" name="">
           <div class="little_gap"></div>
           <div class="text-right"><span class="f_p_text">Forgot Password?</span></div>
           <div class="large_gap"></div>
