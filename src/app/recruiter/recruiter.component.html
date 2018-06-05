@@ -12,7 +12,7 @@
       <li [routerLink]="['user-profile']" routerLinkActive="active-link"><a><i class="fas fa-edit"></i> Edit Profile</a></li>
       <li routerLinkActive="active-link"><a><i class="fas fa-edit"></i> Candidates Pool</a></li>      
       <li routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}"><a><i class="fas fa-edit"></i> Jobs</a>
-        <ul>
+        <ul [@goals]="goals.length">
           <li><a routerLink="['postajob']"><i class="fa fa-edit"></i>Post a Job</a></li>
           <li><a><i class="fa fa-edit"></i>View / Edit Jobs</a></li>
         </ul>
@@ -23,12 +23,8 @@
           <li><a><i class="fa fa-edit"></i>View Tests</a></li>
         </ul>
       </li> 
-      <li routerLinkActive="active-link"><a><i class="fas fa-edit"></i> Tests</a>
-        <ul>
-          <li><a><i class="fa fa-edit"></i>Create a Job</a></li>
-          <li><a><i class="fa fa-edit"></i>View Tests</a></li>
-        </ul>
-      </li>      
+      
+           
     </ul>
   </div>
 
